@@ -66,10 +66,15 @@ function board_to_string(board) {
     return rows.join('\n');
 }
 
-function checkLegality(coords) {
-    if (coords[0] < 0 || coords[0] >= board.length) {
+function checkLegality(coord) {
+    function is_on_coord (piece) {
+        return piece.position[0] == coord[0] && piece.position[1] == coord[1];
+    } 
+    if (coord[0] < 0 || coord[0] >= board.length) {
         return false
-    } else if (coords[1] < 0 || coords[1] >= board.length) {
+    } else if (coord[1] < 0 || coord[1] >= board.length) {
+        return false;
+    } else if (pieces.some(is_on_coord)) {
         return false;
     }
     return true;
