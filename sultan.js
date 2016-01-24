@@ -14,6 +14,15 @@ var pieces = [
                 [x, y - 1]
             ];
         }
+    },
+    {
+        position: [2,4]
+    },
+    {
+        position: [6,4]
+    },
+    {
+        position: [5,1]
     }
 ];
 
